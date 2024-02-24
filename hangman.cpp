@@ -6,14 +6,6 @@
 using namespace std;
 
 string words[] = {"smile", "niceness", "bahamut", "dollar", "spongebob"};
-string hangman[] = {
-        "+---------+",
-        "|         O",
-        "|        /|\\",
-        "|        / \\",
-        "|          ",
-        "+===       "
-    };
 
 int main() {
     srand(time(NULL));
@@ -30,6 +22,7 @@ int main() {
         cin >> playerGuess;
 
         string guess(1, playerGuess);
+        cout << guess << endl;
         bool charIsFound = false;
 
         //checks tempsecret for every instance of a successful guess within the string
@@ -43,17 +36,26 @@ int main() {
         }
 
         cout << publicWord << endl;
+        cin.ignore(10000, '\n');
 
         if (charIsFound == false) {
             attempts++;
 
             for(int i = 1; i <= attempts; i++) {
+                string hangman[] = {
+                    "+---------+",
+                    "|         O",
+                    "|        /|\\",
+                    "|        / \\",
+                    "|          ",
+                    "+===       "
+                };
                 cout << hangman[i-1] << endl;
             }
         }
 
         if (attempts >= 6) {
-            cout << "Unfortunately, you've lost." << endl;
+            cout << "Unfortunately, you've lost. The word was " << secret << "." << endl;
             system("pause");
             exit(0);
         }
