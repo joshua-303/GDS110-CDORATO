@@ -36,6 +36,7 @@ int main() {
         }
 
         cout << publicWord << endl;
+        //ignores remaining characters on the line so that they are not inputted when the code loops
         cin.ignore(10000, '\n');
 
         if (charIsFound == false) {
