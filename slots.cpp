@@ -45,12 +45,16 @@ int main() {
                     system("pause");
                     }
                 break;
+
             case 2:
                 cout << "\nThank you so much for playing! Your final total was " << credits << "." << endl;
                 system("pause");
                 exit(0);
+                
             default:
                 cout << "Invalid input.\n" << endl;
+                cin.clear();
+                cin.ignore(1000, '\n');
                 system("pause");
                 break;
             }
